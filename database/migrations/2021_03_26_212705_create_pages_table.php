@@ -17,7 +17,6 @@ class CreatePagesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('body');
-            $table->boolean('published');
             $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
         });

@@ -1,6 +1,6 @@
 <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        Manage Posts
+        Manage Pages
     </h2>
 </x-slot>
 <div class="py-12">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             @endif
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Create New Post</button>
+            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Create New Page</button>
             @if($isOpen)
                 @include('livewire.create')
             @endif
@@ -29,14 +29,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($posts as $post)
+                @foreach($pages as $page)
                     <tr>
-                        <td class="border px-4 py-2">{{ $post->id }}</td>
-                        <td class="border px-4 py-2">{{ $post->title }}</td>
-                        <td class="border px-4 py-2">{{ $post->body }}</td>
+                        <td class="border px-4 py-2">{{ $page->id }}</td>
+                        <td class="border px-4 py-2">{{ $page->title }}</td>
+                        <td class="border px-4 py-2">{{ $page->body }}</td>
                         <td class="border px-4 py-2">
-                            <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                            <button wire:click="delete({{ $post->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
+                            <button wire:click="edit({{ $page->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
+                            <button wire:click="delete({{ $page->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
                         </td>
                     </tr>
                 @endforeach

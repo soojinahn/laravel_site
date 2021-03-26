@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Posts;
+use App\Http\Livewire\Pages;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,12 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $user = Auth::user();
     $posts = $user->posts();
-    return view('dashboard', compact('posts'));
+    $pages = $user->pages();
+    //return view('dashboard', compact('posts'));
+    return view('dashboard', compact('pages'));
 })->name('dashboard');
 
 Route::get('post', Posts::class)->name('post');
+
+Route::get('page', Pages::class)->name('page');
+
