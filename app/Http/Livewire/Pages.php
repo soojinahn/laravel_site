@@ -10,6 +10,7 @@ class Pages extends Component
 {
     public $pages, $title, $body, $page_id;
     public $isOpen = 0;
+    public $published = False;
 
     /**
      * The attributes that are mass assignable.
@@ -66,6 +67,7 @@ class Pages extends Component
         $this->title = '';
         $this->body = '';
         $this->page_id = '';
+        $this->published = False;
     }
 
     /**
@@ -83,6 +85,7 @@ class Pages extends Component
         Page::updateOrCreate(['id' => $this->page_id], [
             'title' => $this->title,
             'body' => $this->body,
+            'published' => $this->published
         ]);
 
         session()->flash('message',
@@ -102,6 +105,7 @@ class Pages extends Component
         $this->page_id = $id;
         $this->title = $page->title;
         $this->body = $page->body;
+        $this->published = $page->published;
 
         $this->openModal();
     }

@@ -25,6 +25,7 @@
                     <th class="px-4 py-2 w-20">No.</th>
                     <th class="px-4 py-2">Title</th>
                     <th class="px-4 py-2">Body</th>
+                    <th class="px-4 py-2">Published</th>
                     <th class="px-4 py-2">Action</th>
                 </tr>
                 </thead>
@@ -34,6 +35,7 @@
                         <td class="border px-4 py-2">{{ $page->id }}</td>
                         <td class="border px-4 py-2">{{ $page->title }}</td>
                         <td class="border px-4 py-2">{{ $page->body }}</td>
+                        <td class="border px-4 py-2">{{ $page->published }}</td>
                         <td class="border px-4 py-2">
                             <button wire:click="edit({{ $page->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
                             <button wire:click="delete({{ $page->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Delete</button>
